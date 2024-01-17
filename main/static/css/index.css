@@ -1,0 +1,204 @@
+img{
+    width: 100%;
+}
+.p,h1,h2,h3,h4,h5 
+{
+  letter-spacing: 1px;
+}
+
+
+
+#zoom-container {
+  overflow: hidden;
+  width: 400px; /* Adjust the width of the zoom container */
+  height: 400px; /* Adjust the height of the zoom container */
+  position: relative;
+}
+
+#zoom-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+
+
+}
+
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white; /* Text color on the overlay */
+  background-color: rgba(0, 0, 0, 0.1); /* Set the background color and adjust the opacity */
+}
+
+#zoom-container:hover #zoom-image {
+  transform: scale(1.5); 
+
+}
+
+  
+  .navbar-nav .nav-item:hover .nav-link,
+  .navbar-nav .nav-item.active .nav-link,
+  .navbar-nav .nav-item:focus .nav-link {
+    border-bottom: 2px solid black;
+  }
+
+  #image-container {
+
+    position: relative;
+    overflow: hidden;
+    height: 650px;
+
+
+  }
+
+#crop-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+
+    
+}
+
+
+
+#content-above {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(179, 170, 170); /* Add a black border around the letters */
+
+}
+
+
+
+.image-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Set the background color and adjust the opacity */
+  z-index: 1;
+}
+
+
+.b
+{
+	padding: 20px 50px;
+	background-color:white;
+  font-size: 20px;
+	color: black;
+	border: 2px solid rgb(249, 249, 249);
+	cursor: pointer;
+	transition: transform 0.5s ease;
+  }
+  
+  
+  .b:hover {
+	transform: translateX(10px); 
+	background-color:transparent;
+  color:white;
+  border: 2px solid white;
+  }
+
+  .cc 
+  {
+    margin-left: 11%;
+    margin-bottom: 6%;
+  }
+
+  .b1
+{
+  letter-spacing: 1px;
+	padding: 15px ;
+  margin-bottom: 35px;
+  margin-left: 10%;
+  margin-right: 10%;
+	background-color:white;
+  font-size: 20px;
+	color: black;
+	border: 2px solid rgb(249, 249, 249);
+	cursor: pointer;
+	transition: transform 0.5s ease;
+  }
+  
+  
+  .b1:hover {
+	transform: translateX(10px); 
+	background-color:transparent;
+  color:white;
+  border: 2px solid white;
+  }
+
+
+  .c 
+  {
+    margin-top: 8%;
+  }
+  .c1 
+  {
+    margin-top: 5%;
+  }
+
+  .c2 
+  {
+    margin-top: 3%;
+  }
+
+  .b2
+  {
+    letter-spacing: 3px;
+    padding: 15px 30px ;
+    background-color:black;
+    font-size: 18px;
+    color: white;
+    border: 2px solid rgb(249, 249, 249);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    }
+    
+    
+    .b2:hover {
+    transform: translateX(10px); 
+    background-color:transparent;
+    color:black;
+    border: 1px solid black;
+    }
+
+    .con 
+    {
+      font-size: 20px;
+      margin-top: 25%;
+    }
+
+    .b2
+    {
+      margin-top: 5%;
+    }
+
+    .c3 
+    {
+      margin-top: 5%;
+      text-align: center;
+    }
+    .hh 
+    {
+      letter-spacing: 3px;
+    }
+
+    .c4 
+    {
+      margin-top: 7%;
+    }

@@ -1,0 +1,59 @@
+.logo
+{
+    height: 70px;
+    width: 140px;
+}
+
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-nav .nav-item {
+    display: inline-block;
+    margin: 0 10px; /* Adjust the margin as needed */
+}
+
+.navbar-nav .ms-auto {
+    float: right;
+}
+
+/* Custom CSS for font styling */
+:root {
+    --heading-font-family: 'Raleway', sans-serif;
+    --heading-font-weight: 400;
+    --heading-font-style: normal;
+    --text-font-family: 'Raleway', sans-serif;
+    --text-font-weight: 400;
+    --text-font-style: normal;
+    --base-text-font-size: 15px;
+}
+
+body {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight);
+    font-style: var(--text-font-style);
+    font-size: var(--base-text-font-size);
+    letter-spacing: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+}
+
+p {
+    font-size: var(--default-text-font-size);
+    letter-spacing: 0.5px; 
+}
+.navbar-nav .nav-item.dropdown > a::after {
+    display: none !important;
+
+}
+
+.d 
+{
+    color: black;
+}
+

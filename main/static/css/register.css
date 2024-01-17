@@ -1,0 +1,43 @@
+img{
+    width: 100%;
+}
+
+
+.logo
+{
+    height: 70px;
+    width: 140px;
+}
+
+.form-box {
+    background-color:white;
+    max-width: 650px;
+    margin: auto;
+    margin-top: 1cm;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.l 
+{
+    text-align: center;
+}
+body {
+    font-family: var(--text-font-family);
+    font-weight: var(--text-font-weight);
+    font-style: var(--text-font-style);
+    font-size: var(--base-text-font-size);
+    letter-spacing: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-style: var(--heading-font-style);
+}
+
+p {
+    font-size: var(--default-text-font-size);
+    letter-spacing: 0.5px; 
+}

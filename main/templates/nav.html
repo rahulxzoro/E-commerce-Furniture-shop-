@@ -1,0 +1,63 @@
+{% load static %}
+<header>
+<nav class="navbar navbar-expand-lg bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img class="logo" src="{% static 'images/ll.jpg' %}" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">WHAT'S NEW</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">JANUARY SALE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">LIVING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">DINING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">BEDROOM</a>
+          </li>
+
+  
+          <form class="d-flex me-2" role="search"> 
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          
+          <li class="nav-item dropdown ms-auto " > 
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="material-symbols-outlined d">
+                person
+                </span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              
+              {% if user.is_authenticated %}
+              {% if user.is_staff %}
+              <li><a class="dropdown-item" href="#">SELLER</a></li>
+              <li><a class="dropdown-item" href="#">ADD PRODUCTS</a></li>
+              {% else %}
+              <li><a class="dropdown-item" href="#">BUYER</a></li>
+              {% endif%}
+              <li><a class="dropdown-item" href="#">welcome back,<br><b>{{user.username}}</b></a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{% url 'credential:logout' %}">LOGOUT</a></li>
+              {% else %}
+              <li><a class="dropdown-item" href="{% url 'credential:register' %}">SIGN IN</a></li>
+
+              <li><a class="dropdown-item" href="{% url 'credential:login'%}">LOGIN</a></li>
+              {% endif %}
+            </ul>
+          </li>
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
