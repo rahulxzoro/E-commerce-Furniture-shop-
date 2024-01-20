@@ -41,3 +41,9 @@ p {
     font-size: var(--default-text-font-size);
     letter-spacing: 0.5px; 
 }
+
+.navbar-nav .nav-item:hover .nav-link,
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:focus .nav-link {
+  border-bottom: 2px solid black;
+}

@@ -19,7 +19,7 @@
 
         <h5><p>DINE WITH FAMILY AND FRIENDS</b><h5>
         <h1><b>SUMMER ENTERTAINING</b></h1>
-        <button class="b">SHOP NOW</button>
+        <a href="{% url 'furniture:category'  %}"><button class="b">SHOP NOW</button></a>
     </div>
 
     <div id="image-container">
@@ -42,15 +42,17 @@
 
     <div class="container c1">
       <div class="row">
+        {% for i in category %}
         <div class="col-lg-4">
           <div id="zoom-container" class="border">
-            <img id="zoom-image" src="{% static 'images/living.webp' %}" alt="Zoomable Image">
+            <img id="zoom-image" src="{{i.image.url}}" alt="Zoomable Image">
             <div class="content-overlay">
-              <h2 class="cc">LIVING</h2>
-              <button class="b1">VIEW PRODUCTS</button>
+              <h2 class="cc">{{i.name}}</h2>
+              <a href="{% url 'furniture:category' i.id %}"><button class="b1">VIEW PRODUCTS</button></a>
             </div>
           </div>
         </div>
+        {% endfor %}
       </div>
     </div> 
 
@@ -62,7 +64,12 @@
           <button class="b2">BOOK FREE CONSULTATION</button>
         </div>
         <div class="col-lg-6">
-
+          <video  width="640" height="360" controls>
+            <source class="video" src="" type="video/mp4">
+           
+            Your browser does not support the video tag.
+          </video>
+          
         </div>
       </div>
     </div>

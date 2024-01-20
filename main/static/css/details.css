@@ -1,0 +1,100 @@
+img 
+{
+width: 100%;
+}
+
+.c 
+{
+    margin-top: 3%;
+}
+
+.c1
+{
+   margin-left: 3%; 
+}
+
+.line 
+{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    margin-top: 10px; 
+}
+
+.desc 
+{
+    margin-top: 13px;
+    font-size: 16px;
+}
+.click 
+{
+    margin-top: 25px;
+}
+.s 
+{
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+.share-icons {
+    display: flex;
+    align-items: center; 
+}
+
+.share-icons .s {
+    margin-right: 20px; 
+
+}
+.icons 
+{
+    font-size: 20px;
+}
+.i 
+{
+    margin-left: 10px;
+}
+
+.material-symbols-outlined 
+{
+    font-size: 19px;
+}
+
+.w 
+{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.wish
+{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.b2,.b1
+  {
+    letter-spacing: 3px;
+    padding: 15px 30px ;
+    background-color: #cf9362;
+    font-size: 18px;
+    color: white;
+    border: 2px solid rgb(249, 249, 249);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    }
+    
+    .b1:hover {
+        transform: translateX(10px); 
+        background-color:transparent;
+        color:black;
+        border: 1px solid black;
+        }
+    
+    .b2:hover {
+    transform: translateX(10px); 
+    background-color:transparent;
+    color:black;
+    border: 1px solid black;
+    }
+
+.b1 
+{
+margin-left: 10px;
+}

@@ -1,8 +1,13 @@
+
+
+
 .logo
 {
     height: 70px;
     width: 140px;
 }
+
+
 
 .navbar-nav {
     width: 100%;
@@ -56,4 +61,15 @@ p {
 {
     color: black;
 }
+.d1
+{
+    color: black;
+}
 
+
+
+.navbar-nav .nav-item:hover .nav-link,
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:focus .nav-link {
+  border-bottom: 2px solid black;
+}

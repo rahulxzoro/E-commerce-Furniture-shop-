@@ -154,7 +154,7 @@ img{
 
   .c2 
   {
-    margin-top: 3%;
+    margin-top: 5%;
   }
 
   .b2
@@ -180,7 +180,7 @@ img{
     .con 
     {
       font-size: 20px;
-      margin-top: 25%;
+      margin-top: 15%;
     }
 
     .b2
@@ -201,4 +201,8 @@ img{
     .c4 
     {
       margin-top: 7%;
+    }
+    .video 
+    {
+      margin-top: 2%;
     }
