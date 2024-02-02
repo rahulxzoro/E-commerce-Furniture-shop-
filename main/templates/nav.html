@@ -9,31 +9,41 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">WHAT'S NEW</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'furniture:home' %}">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">JANUARY SALE</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'furniture:store' %}">CONTACT US</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">LIVING</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'furniture:category' id=1 %}">LIVING</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">DINING</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'furniture:category' id=2 %}">DINING</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">BEDROOM</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'furniture:category' id=3 %}">BEDROOM</a>
           </li>
-
-  
-          <form class="d-flex me-2" role="search"> 
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          
+          <form class="d-flex me-2" action="{% url 'search:search' %}" role="search"> 
+            <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
           </form>
+          {% comment %} <li class="n">
+            <a href="" class="nav-link active"><span class="material-symbols-outlined wish">
+              favorite
+              </span></a>
+          </li> {% endcomment %}
+          
           <li class="nav-item ms-auto d2">
-            <a class="nav-link active" href=""><span class="material-symbols-outlined  d1">
+            <a class="nav-link active" href="{% url 'cart:display' %}"><span class="material-symbols-outlined  d1">
               shopping_cart
               </span></a>
+              {% if count != 0 %}
+                    <h5 class="count">{{count}}</h5>
+                    {% else %}
+                    
+                    {% endif %}
           </li>
-          <li class="nav-item dropdown  " > 
+          <li class="nav-item dropdown" > 
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <span class="material-symbols-outlined d">
                 person
@@ -42,13 +52,7 @@
             <ul class="dropdown-menu dropdown-menu-end">
               
               {% if user.is_authenticated %}
-              {% if user.is_staff %}
-              <li><a class="dropdown-item" href="#">SELLER</a></li>
-              <li><a class="dropdown-item" href="#">ADD PRODUCTS</a></li>
-              {% else %}
-              <li><a class="dropdown-item" href="#">BUYER</a></li>
-              {% endif%}
-              <li><a class="dropdown-item" href="#">welcome back,<br><b>{{user.username}}</b></a></li>
+              <li><a class="dropdown-item" href="{% url 'furniture:profile' %}"><br><b>{{user.username}}</b></a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'credential:logout' %}">LOGOUT</a></li>
               {% else %}

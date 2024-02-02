@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 class Category(models.Model):
     name=models.CharField(max_length=250,unique=True)
@@ -13,6 +15,8 @@ class Category(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
     
+    def get_url(self):
+        return reverse('furniture:category',args=[self.slug])
 
 class Product(models.Model):
     name=models.CharField(max_length=250,unique=True)
@@ -33,4 +37,13 @@ class Product(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
     
+class Details(models.Model):
+    address=models.TextField()
+    pincode=models.IntegerField()
+    city=models.TextField()
+    country=models.TextField()  
+    phone=models.IntegerField()
     
+        
+    def __str__(self):
+        return '{}'.format(self.name)

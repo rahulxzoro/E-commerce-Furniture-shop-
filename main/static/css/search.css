@@ -1,0 +1,36 @@
+img 
+{width: 100%;}
+
+.name 
+{
+  margin-top: 10px;
+  letter-spacing: 3px;
+}
+.price 
+{
+  font-size: 16px;
+  color: #cf9362;
+  display: flex;
+  align-items: baseline;
+}
+
+.material-symbols-outlined 
+{
+  padding-bottom: 3px;
+  font-size: 18px;
+  color: #cf9362;
+
+}
+.cc 
+{
+  overflow: hidden;
+  width: 300px; /* Adjust the width of the zoom container */
+  height: 300px; /* Adjust the height of the zoom container */
+  position: relative;
+}
+
+.cc img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%; /* Make the image fill the container */
+  object-fit: cover; /* Maintain the aspect ratio and cover the container */
+}

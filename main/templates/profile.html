@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PROJECT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+  </head>
+  <body>
+
+    {% include 'nav.html' %}
+
+    <div class="container c">
+      {% if user.is_authenticated %}
+
+        <div class="row  r">
+            <div class="col-lg-12">
+                <p>Logout</p>
+                <h4>MY ACCOUNT</h4>
+                <h5>welcome back, {{user.username}}</h5>
+                
+            </div>
+        </div>
+        <div class="row r">
+          <div class="col-lg-8 col-md-12">
+            <p class="mute text-muted">MY ORDERS</p>
+            <div class="line"></div>
+              <p class="add">You haven't placed any orders yet</p>
+              <a href="{% url 'furniture:address' %}"><button class="b2">ADD YOUR ADDRESS</button></a>
+              <a href="{% url 'cart:display' %}"><button class="b2">YOUR CART</button></a>
+              
+          </div>
+          <div class="col-lg-4 ">
+            <p class="mute text-muted"> ADDRESS</p>
+            <div class="line"></div>
+            {% for i in data %}
+
+            <p class="add">
+              <p>{{ i.address }}</p>
+              <p>{{ i.pincode }}</p>
+              <p>{{ i.city }}</p>
+              <p>{{ i.country }}</p>
+              <p>{{ i.phone }}</p>
+              <div class="editt">
+              <a href="{% url 'furniture:edit' i.id %}"><p class="edit">EDIT</p></a>
+              <a href="{% url 'furniture:delete' i.id %}"><p class="delete">DELETE</p></a>
+              </div>
+              {% endfor %}
+
+
+          </div>
+        </div>
+        {% else %}
+
+        {% endif %}
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <h5>Explore</h5>
+            <p>Dining</p>
+          <p>Bedroom</p>
+          <p>Office</p>
+          <p>Decor</p>
+          <p>Last Chance</p>
+          <p>Blog</p>
+          </div>
+          <div class="col-lg-2">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2">
+            <h5>Support</h5>
+            <p>Stay connected on <br>social media:</p>
+          </div>
+          <div class="col-lg-2">
+            <h1><span class="material-symbols-outlined">
+              nest_clock_farsight_analog
+              </span></h1>
+            <h5>Immediate Availability</h5>
+            <p>On select products</p>
+          </div>
+          <div class="col-lg-2">
+            <h3><span class="material-symbols-outlined">
+              scene
+              </span></h3>
+            <h5>Complimentary Interior Design</h5>
+            <p>When you shop in store</p>
+          </div>
+          <div class="col-lg-2">
+            <h3><span class="material-symbols-outlined ">
+              volunteer_activism
+              </span></h3>
+            <h5>White Glove Delivery</h5>
+            <p>When you shop in store</p>
+          </div>
+        </div>
+        <div class="row foo">
+          <div class="col-lg-12 text-center">
+            <div class="font"><i class="bi bi-facebook ms-3"></i><i class="bi bi-instagram ms-3"></i><i class="bi bi-pinterest ms-3"></i></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

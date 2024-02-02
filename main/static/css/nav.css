@@ -52,19 +52,6 @@ p {
     font-size: var(--default-text-font-size);
     letter-spacing: 0.5px; 
 }
-.navbar-nav .nav-item.dropdown > a::after {
-    display: none !important;
-
-}
-
-.d 
-{
-    color: black;
-}
-.d1
-{
-    color: black;
-}
 
 
 
@@ -72,4 +59,58 @@ p {
 .navbar-nav .nav-item.active .nav-link,
 .navbar-nav .nav-item:focus .nav-link {
   border-bottom: 2px solid black;
+}
+
+.navbar-nav .nav-item .nav-link .material-symbols-outlined {
+    font-size: 25px;
+    color: black;
+}
+.navbar-nav .nav-item.dropdown > a::after {
+    display: none !important;
+}
+
+.navbar-nav .search-form input.form-control {
+width: 400px; 
+}
+.count
+{
+    position: absolute;
+    top: 35px;
+    right: 65px;
+    background-color: red; 
+    color:white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.wish {
+    position: absolute;
+    top: 35px;
+    right: 4cm; 
+    font-size: 25px;
+
+}
+
+.wish:hover,
+.wish.active,
+.wish:focus {
+    position: absolute;
+    border-bottom: 2px solid black;
+    right: 4cm; 
+    
+}
+
+@media screen and (max-width: 576px) {
+    .count
+    {
+        position: absolute;
+        top: 65px;
+        right: 65px;
+        background-color: red; 
+        color:white;
+        border-radius: 50%;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
 }

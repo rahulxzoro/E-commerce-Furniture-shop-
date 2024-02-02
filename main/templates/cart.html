@@ -1,0 +1,194 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PROJECT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+  </head>
+  <body>
+
+    {% include 'nav.html' %}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="under">
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="container c {% if cart|length == 0 %}hide-when-empty{% endif %}">
+        <div class="row">
+            <div class="col-lg-12">
+                <h5 class="h">CART</h5>
+              </div>
+            </div>
+        </div>    
+
+        <div class="container c1 {% if cart|length == 0 %}hide-when-empty{% endif %}">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 t">
+              <p>PRODUCT</p>
+          </div>
+          <div class="col-lg-2 col-md-3">
+          </div>
+          <div class="col-lg-2 col-md-3 t1">
+            <p>QUANTITY</p>
+          </div>
+          <div class="col-lg-4 col-md-6 t">
+            <p>TOTAL</p>
+          </div>
+          <div class="line"></div>
+          </div>
+        </div>
+
+        <div class="container c2 {% if cart|length == 0 %}hide-when-empty{% endif %}">
+          <div class="row">
+            {% for i in cart %}
+            
+            <div class="col-lg-2 col-md-3">
+              <img class="image" src="{{i.product.image.url}}" alt="">  
+            </div>
+            <div class="col-lg-3 col-md-6 in">
+              <p class="name">{{i.product.name}}</p>
+              <p class="n"><i class="bi bi-currency-dollar"></i>{{i.product.price}}</p>
+            </div>
+            <div class="col-lg-2 col-md-3">
+              <div class="line2">
+
+                {% if i.quantity == i.product.stock %}
+
+                <a href="{% url 'cart:dele' i.product.id %}"><span class="material-symbols-outlined minus">
+                  remove
+                  </span></a>
+                  
+                    <p class="pr">{{i.quantity}}</p>
+                  <a href="{% url 'cart:cart' i.product.id %}"><span class="material-symbols-outlined plus text-muted">
+                    add
+                    </span></a>
+              </div>
+              <a class="link-active rm" aria-current="page" href="{% url 'cart:delete' i.product.id %}">REMOVE</a>
+            </div>
+            {% else %}
+
+            <a href="{% url 'cart:dele' i.product.id %}"><span class="material-symbols-outlined minus">
+              remove
+              </span></a>
+              
+                <p class="pr">{{i.quantity}}</p>
+              <a href="{% url 'cart:cart' i.product.id %}"><span class="material-symbols-outlined plus">
+                add
+                </span></a>
+          </div>
+          <a class="link-active rm" aria-current="page" href="{% url 'cart:delete' i.product.id %}">REMOVE</a>
+        </div>
+        {% endif %}
+
+            <div class="col-lg-3 col-md-12">
+              <p class="tot"><i class="bi bi-currency-dollar"></i>{{i.product.price}}</p>
+            </div>
+           
+                          
+            {% endfor %}
+            
+
+          </div>
+        
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="line3"></div>
+                <div class="total">TOTAL:<i class="bi bi-currency-dollar">{{total_amount}} AUD</i></div>
+                
+                <form action="{% url 'cart:buy' %}" method="post" id="addressForm">
+                  {% csrf_token %}
+                  <div>
+                    <button class="b2" type="submit">PLACE ORDER</button>
+
+                      <h5>SELECT ADDRESS</h5>
+                      {% for i in addr %}
+                          <input type="radio" name="selected_address" value="{{ i.id }}">
+                          <p>{{ i.address }}</p>
+                          <p>{{ i.pincode }}</p>
+                          <p>{{ i.city }}, {{ i.country }}</p>
+                          <p>{{ i.phone }}</p>
+                          
+                      {% endfor %}
+                  </div>
+              </form>
+
+                
+                </div>
+              </div>
+            </div>    
+            {% if cart|length == 0 %}
+        <h3 class="empty">cart is empty click <a href="{% url 'furniture:category' %}">here</a> for purchase products</h3>
+        {% endif %}
+
+           
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-2">
+                <h5>Explore</h5>
+                <p>Dining</p>
+              <p>Bedroom</p>
+              <p>Office</p>
+              <p>Decor</p>
+              <p>Last Chance</p>
+              <p>Blog</p>
+              </div>
+              <div class="col-lg-2">
+                <h5>Services</h5>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Shop</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2">
+                <h5>Support</h5>
+                <p>Stay connected on <br>social media:</p>
+              </div>
+              <div class="col-lg-2">
+                <h1><span class="material-symbols-outlined">
+                  nest_clock_farsight_analog
+                  </span></h1>
+                <h5>Immediate Availability</h5>
+                <p>On select products</p>
+              </div>
+              <div class="col-lg-2">
+                <h3><span class="material-symbols-outlined">
+                  scene
+                  </span></h3>
+                <h5>Complimentary Interior Design</h5>
+                <p>When you shop in store</p>
+              </div>
+              <div class="col-lg-2">
+                <h3><span class="material-symbols-outlined ">
+                  volunteer_activism
+                  </span></h3>
+                <h5>White Glove Delivery</h5>
+                <p>When you shop in store</p>
+              </div>
+            </div>
+            <div class="row foo">
+              <div class="col-lg-12 text-center">
+                <div class="font"><i class="bi bi-facebook ms-3"></i><i class="bi bi-instagram ms-3"></i><i class="bi bi-pinterest ms-3"></i></div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

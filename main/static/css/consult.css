@@ -1,0 +1,118 @@
+#image-container {
+
+    position: relative;
+    overflow: hidden;
+    height: 650px;
+
+
+  }
+
+  #content-above {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(179, 170, 170); 
+  
+  }
+
+  .pp {
+    font-size: 3em; 
+    line-height: 1;   
+  }
+
+  .c1
+  {
+    margin-top: 3%;
+  }
+
+  .r 
+  {
+    text-align: center;
+  }
+
+  .c2 
+  {
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  .c3
+  {
+    margin-top: 3%;
+  }
+
+  .r2 
+  {
+    line-height: .7cm;
+    text-align: center;
+  }
+  .step
+  {
+    padding-top: 3%;
+  }
+
+  
+  .footer {
+    background-color: #f5f5f5; /* Choose a suitable background color */
+    padding: 30px 0;
+    color: #333; /* Choose a suitable text color */
+    margin-top: 5%;
+  }
+
+  .footer h4 {
+    color: #555; /* Choose a suitable heading color */
+  }
+
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+
+.footer .ficn {
+font-size: 25px;
+}
+
+.foo {
+display: flex;
+
+}
+.font
+{
+font-size: 25px;
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    text-align: center;
+    margin-left: 15%;
+    background-color: #f5f5f5; /* Choose a suitable background color */
+    padding: 30px 0;
+    color: #333; /* Choose a suitable text color */
+  }
+
+  .footer h4 {
+    color: #555; /* Choose a suitable heading color */
+  }
+
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+
+.footer .ficn {
+font-size: 25px;
+}
+
+}

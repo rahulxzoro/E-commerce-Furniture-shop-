@@ -21,7 +21,7 @@ def register(request):
             else:
                
                 user=User.objects.create_user(username=Username,first_name=first_name,last_name=last_name,email=email,password=password,is_staff=customer_type )
-
+                user.save()
                 return redirect('credential:login')
         else:
             messages.info(request,'Password does not matched')

@@ -16,11 +16,19 @@
   <body>
 
     {% include 'nav.html' %}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="under">
+
+        </div>
+      </div>
+    </div>
     
     <div class="container c">
       <div class="row">
         <div class="col-lg-6">
-            <img src="{{products.image.url}}" alt="">
+            <img class="length" src="{{products.image.url}}" alt="">
         </div>
         <div class="col-lg-5 c1">
         <h5>{{products.name}}</h5>
@@ -40,8 +48,14 @@
                 favorite
                 </span>
         </div>
+
+        {% if products.stock == 0 %}
+        <p class="out-of-stock-message">Out of stock</p>
+        {% else %}
         <button class="b2">BUY IN STORE</button>
-        <button class="b1">ADD TO CART</button>
+        <a href="{% url 'cart:cart' products.id %}"><button class="b1">ADD TO CART</button></a>
+        {% endif %}
+
     </div>
         <div class="col-lg-2">
         </div>
@@ -49,7 +63,62 @@
     </div>
 
     
-
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <h5>Explore</h5>
+            <p>Dining</p>
+          <p>Bedroom</p>
+          <p>Office</p>
+          <p>Decor</p>
+          <p>Last Chance</p>
+          <p>Blog</p>
+          </div>
+          <div class="col-lg-2">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2">
+            <h5>Support</h5>
+            <p>Stay connected on <br>social media:</p>
+          </div>
+          <div class="col-lg-2">
+            <h1><span class="material-symbols-outlined">
+              nest_clock_farsight_analog
+              </span></h1>
+            <h5>Immediate Availability</h5>
+            <p>On select products</p>
+          </div>
+          <div class="col-lg-2">
+            <h3><span class="material-symbols-outlined">
+              scene
+              </span></h3>
+            <h5>Complimentary Interior Design</h5>
+            <p>When you shop in store</p>
+          </div>
+          <div class="col-lg-2">
+            <h3><span class="material-symbols-outlined ">
+              volunteer_activism
+              </span></h3>
+            <h5>White Glove Delivery</h5>
+            <p>When you shop in store</p>
+          </div>
+        </div>
+        <div class="row foo">
+          <div class="col-lg-12 text-center">
+            <div class="font"><i class="bi bi-facebook ms-3"></i><i class="bi bi-instagram ms-3"></i><i class="bi bi-pinterest ms-3"></i></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    
    
     
     
