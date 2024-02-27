@@ -55,7 +55,7 @@ def dele(request,id):
     return redirect('cart:display')
 
 def buy(request):
-    selected_address = request.GET.get('selected_address')
+    selected_address = request.POST.get('selected_address')
 
     if selected_address:
         cart_items = Cartpage.objects.all()

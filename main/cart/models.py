@@ -11,6 +11,8 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
+    address=models.TextField(max_length=255,null=False)
+    
 
 
 

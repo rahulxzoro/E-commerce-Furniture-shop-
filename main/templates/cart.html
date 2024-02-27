@@ -106,32 +106,53 @@
               <div class="col-lg-12">
                 <div class="line3"></div>
                 <div class="total">TOTAL:<i class="bi bi-currency-dollar">{{total_amount}} AUD</i></div>
-                
-                <form action="{% url 'cart:buy' %}" method="post" id="addressForm">
-                  {% csrf_token %}
-                  <div>
-                    <button class="b2" type="submit">PLACE ORDER</button>
+                <button class="b2" type="button"  data-bs-toggle="modal"  data-bs-target="#addressModal">PLACE ORDER</button>
 
-                      <h5>SELECT ADDRESS</h5>
-                      {% for i in addr %}
-                          <input type="radio" name="selected_address" value="{{ i.id }}">
-                          <p>{{ i.address }}</p>
-                          <p>{{ i.pincode }}</p>
-                          <p>{{ i.city }}, {{ i.country }}</p>
-                          <p>{{ i.phone }}</p>
-                          
-                      {% endfor %}
-                  </div>
-              </form>
+                
+              </div>
+                <!-- Add this modal at the end of your cart.html template -->
+<div class="modal" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="addressModalLabel">Select Address</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <!-- Update the form in the modal -->
+<form id="addressForm" action="{% url 'cart:buy' %}" method="post">
+  {% csrf_token %}
+  {% for i in addr %}
+      <div class="col-lg-12">
+          <input type="radio" name="selected_address" value="{{ i.address }},{{i.pincode}},{{i.city}},{{i.country}},{{i.phone}}">
+          <h5>House name: {{ i.address }}</h5>
+          <h5>Pincode: {{ i.pincode }}</h5>
+          <h5 class="col-lg-6">City: {{ i.city }}</h5>
+          <h5>Country: {{ i.country }}</h5>
+          <h5>Phone No: {{ i.phone }}</h5>
+      </div>
+  {% endfor %}
+  <button type="button" class="btn btn-primary" onclick="submitAndRedirect()">Submit Address</button>
+</form>
+          </div>
+      </div>
+  </div>
+</div>
 
                 
                 </div>
-              </div>
-            </div>    
+                
             {% if cart|length == 0 %}
         <h3 class="empty">cart is empty click <a href="{% url 'furniture:category' %}">here</a> for purchase products</h3>
         {% endif %}
-
+<!-- Add this script at the end of your cart.html template, after the modal -->
+<script>
+  function submitAndRedirect() {
+      document.getElementById("addressForm").submit();
+      // Close the modal after form submission
+      $('#addressModal').modal('hide');
+    }
+</script>
            
         <footer class="footer">
           <div class="container">
