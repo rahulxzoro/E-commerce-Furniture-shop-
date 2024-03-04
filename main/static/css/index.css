@@ -240,7 +240,10 @@ img{
 }
 
 @media screen and (max-width: 576px) {
-
+.video 
+{
+  width: 100%;
+}
   #image-container {
 
     position: relative;
@@ -349,4 +352,20 @@ img{
 }
 
 
+}
+
+@media screen and (min-width: 768px) {
+
+  #zoom-container {
+    overflow: hidden;
+    width: 350px; /* Adjust the width of the zoom container */
+    height: 350px; /* Adjust the height of the zoom container */
+    position: relative;
+    margin-left: 5px;
+  }
+  .video 
+  {
+    width: 100%;
+    height: 100%;
+  }
 }

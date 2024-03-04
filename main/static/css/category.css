@@ -58,7 +58,7 @@ img
 .cc img {
   width: 100%; /* Make the image fill the container */
   height: 100%; /* Make the image fill the container */
-  object-fit: cover; /* Maintain the aspect ratio and cover the container */
+  object-fit: cover; 
 }
 
 .wi
@@ -129,3 +129,25 @@ font-size: 25px;
 }
 
 }
+
+@media screen and (min-width: 768px) 
+{ 
+
+  .cc 
+  {
+    overflow: hidden;
+    width: 250px; /* Adjust the width of the zoom container */
+    height: 250px; /* Adjust the height of the zoom container */
+    position: relative;
+    margin-left: 2%;
+  }
+  
+  .cc img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; 
+  }
+  
+  
+}
+

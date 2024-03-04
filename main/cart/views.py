@@ -78,4 +78,4 @@ def order_details(request):
     user_id = request.session.get('user', None)
     orders = Order.objects.filter(user_id=user_id)
     
-    return render(request, 'order_details.html', {'orders': orders})
+    return render(request, 'profile.html', {'orders': orders})

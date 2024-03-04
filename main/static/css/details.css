@@ -179,3 +179,23 @@ font-size: 25px;
   }
   
   }
+
+  @media screen and (min-width: 768px) 
+{
+
+  .length
+{   margin-left: 10px;
+    height: 500px;
+    width: 500px;
+}
+
+  .c1
+{
+   margin-left: 1%; 
+}
+
+.b1 
+{
+margin-left: 4px;
+}
+}

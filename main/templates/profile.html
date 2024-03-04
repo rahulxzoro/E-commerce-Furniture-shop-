@@ -29,12 +29,11 @@
         </div>
         <div class="row r">
           <div class="col-lg-8 col-md-12">
-            <p class="mute text-muted">MY ORDERS</p>
+            <!-- <p class="mute text-muted">MY ORDERS</p> -->
             <div class="line"></div>
-              <p class="add">You haven't placed any orders yet</p>
+
               <a href="{% url 'furniture:address' %}"><button class="b2">ADD YOUR ADDRESS</button></a>
               <a href="{% url 'cart:display' %}"><button class="b2">YOUR CART</button></a>
-              
           </div>
           <div class="col-lg-4 ">
             <p class="mute text-muted"> ADDRESS</p>
@@ -43,10 +42,6 @@
 
             <p class="add">
               <p>{{ i.address }}</p>
-              <p>{{ i.pincode }}</p>
-              <p>{{ i.city }}</p>
-              <p>{{ i.country }}</p>
-              <p>{{ i.phone }}</p>
               <div class="editt">
               <a href="{% url 'furniture:edit' i.id %}"><p class="edit">EDIT</p></a>
               <a href="{% url 'furniture:delete' i.id %}"><p class="delete">DELETE</p></a>

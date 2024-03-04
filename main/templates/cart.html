@@ -36,7 +36,7 @@
         <div class="container c1 {% if cart|length == 0 %}hide-when-empty{% endif %}">
           <div class="row">
             <div class="col-lg-4 col-md-6 t">
-              <p>PRODUCT</p>
+              <p class="product">PRODUCT</p>
           </div>
           <div class="col-lg-2 col-md-3">
           </div>
@@ -141,7 +141,6 @@
 
                 
                 </div>
-                
             {% if cart|length == 0 %}
         <h3 class="empty">cart is empty click <a href="{% url 'furniture:category' %}">here</a> for purchase products</h3>
         {% endif %}
@@ -153,9 +152,9 @@
       $('#addressModal').modal('hide');
     }
 </script>
-           
+
         <footer class="footer">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row">
               <div class="col-lg-2">
                 <h5>Explore</h5>
@@ -208,7 +207,7 @@
             </div>
           </div>
         </footer>
-
+      
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

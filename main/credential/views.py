@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import messages,auth
+from django.contrib.auth import authenticate, login as auth_login
+
 # Create your views here.
 def register(request):
     if request.method=='POST':
@@ -10,7 +12,7 @@ def register(request):
         email=request.POST['email']
         password=request.POST['password']
         c_password=request.POST['c_password']
-        customer_type=request.POST['customer_type']
+        # customer_type=request.POST['customer_type',None ]
         if password==c_password:
             if User.objects.filter(username=Username).exists():
                 messages.info(request,"username already taken")
@@ -20,7 +22,7 @@ def register(request):
                 return redirect('credential:register')
             else:
                
-                user=User.objects.create_user(username=Username,first_name=first_name,last_name=last_name,email=email,password=password,is_staff=customer_type )
+                user=User.objects.create_user(username=Username,first_name=first_name,last_name=last_name,email=email,password=password)
                 user.save()
                 return redirect('credential:login')
         else:
@@ -29,20 +31,22 @@ def register(request):
         
     return render(request,'register.html')       
 
-def login(request):
-    if request.method=='POST':
-        username=request.POST['username']
-        password=request.POST['password']
-        user = auth.authenticate(username=username, password=password)
-        print(user.id)
-        if user is not  None:
-            auth.login(request,user)
-            request.session['user']=user.id
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            if hasattr(user, 'id'):
+                request.session['user'] = user.id
             return redirect('/')
         else:
-            messages.info(request,"invalid user")
+            messages.error(request, "Invalid username or password")
             return redirect('credential:login')
-    return render(request,'login.html')
+
+    return render(request, 'login.html')
 
 def logout(request):
     auth.logout(request)
