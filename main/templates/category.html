@@ -35,12 +35,12 @@
       <div class="row">
         {% for i in products %}
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6 col-sm-6 ">
           <div class="cc">
            <a href="{% url 'furniture:details' i.id %}"> <img src="{{i.image.url}}" alt=""></a>
-           <span class="material-symbols-outlined wis">
+           <!-- <span class="material-symbols-outlined wis">
             favorite
-            </span>
+            </span> -->
           </div>
           <p class="name">{{i.name}}</p>
           <p class="price"><span class="material-symbols-outlined">
@@ -56,7 +56,7 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-2">
-                <h5>Explore</h5>
+                <h5><b>Explore</b></h5>
                 <p>Dining</p>
               <p>Bedroom</p>
               <p>Office</p>
@@ -65,16 +65,16 @@
               <p>Blog</p>
               </div>
               <div class="col-lg-2">
-                <h5>Services</h5>
+                <h5><b>Services</b></h5>
                 <ul>
-                  <li><a href="{% url 'furniture:home' %}">Home</a></li>
-                  <li><a href="#">Shop</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="{% url 'furniture:store' %}">Contact</a></li>
+                  <li><a class="link" href="{% url 'furniture:home' %}">Home</a></li>
+                  <li><a class="link" href="#">Shop</a></li>
+                  <li><a class="link" href="#">About Us</a></li>
+                  <li><a class="link" href="{% url 'furniture:store' %}">Contact</a></li>
                 </ul>
               </div>
               <div class="col-lg-2">
-                <h5>Support</h5>
+                <h5><b>Support</b></h5>
                 <p>Stay connected on <br>social media:</p>
               </div>
               <div class="col-lg-2">

@@ -35,7 +35,7 @@
 
         <div class="container c1 {% if cart|length == 0 %}hide-when-empty{% endif %}">
           <div class="row">
-            <div class="col-lg-4 col-md-6 t">
+            <div class="col-lg-4 col-md-6  t">
               <p class="product">PRODUCT</p>
           </div>
           <div class="col-lg-2 col-md-3">
@@ -54,14 +54,14 @@
           <div class="row">
             {% for i in cart %}
             
-            <div class="col-lg-2 col-md-3">
+            <div class="col-lg-2 col-md-6 col-sm-6">
               <img class="image" src="{{i.product.image.url}}" alt="">  
             </div>
-            <div class="col-lg-3 col-md-6 in">
+            <div class="col-lg-3 col-md-6 col-sm-6 in">
               <p class="name">{{i.product.name}}</p>
               <p class="n"><i class="bi bi-currency-dollar"></i>{{i.product.price}}</p>
             </div>
-            <div class="col-lg-2 col-md-3">
+            <div class="col-lg-2 col-md-6 col-sm-6">
               <div class="line2">
 
                 {% if i.quantity == i.product.stock %}
@@ -92,7 +92,7 @@
         </div>
         {% endif %}
 
-            <div class="col-lg-3 col-md-12">
+            <div class="col-lg-3 col-md-12 col-sm-6">
               <p class="tot"><i class="bi bi-currency-dollar"></i>{{i.product.price}}</p>
             </div>
            

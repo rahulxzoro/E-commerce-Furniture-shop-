@@ -16,14 +16,14 @@
 
     {% include 'nav.html' %}
 
+
+    <div id="image-container">
       <div id="content-above">
 
         <h5><p>DINE WITH FAMILY AND FRIENDS</b><h5>
         <h1><b>SUMMER ENTERTAINING</b></h1>
         <a href="{% url 'furniture:category'  %}"><button class="b">SHOP NOW</button></a>
     </div>
-
-    <div id="image-container">
       <div class="image-overlay"> 
         <img id="crop-image" src="{% static 'images/bg2.webp' %}" alt="Your Image">
       </div>
@@ -33,7 +33,7 @@
     <div class="container c">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h5>Your one-stop shop for stylish furniture and decor, delivering the latest trends exclusively to Perth.
+          <h5 class="hhh">Your one-stop shop for stylish furniture and decor, delivering the latest trends exclusively to Perth.
 
           </h5>
         </div>
@@ -44,7 +44,7 @@
     <div class="container c1">
       <div class="row">
         {% for i in category %}
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-6">
           <div id="zoom-container" class="border">
             <img id="zoom-image" src="{{i.image.url}}" alt="Zoomable Image">
             <div class="content-overlay">
@@ -64,7 +64,7 @@
           <p class="con">The Furniture Gallery’s mission is to help turn your dream interior into a reality. Our team of talented stylists share a passion to create beautiful spaces for you to call home. Because life is too short not to love where you live.</p>
           <a href="{% url 'furniture:consult' %}"><button class="b2">BOOK FREE CONSULTATION</button></a>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 vi">
           <video class="video"  width="640" height="360" controls>
             <source class="video" src="{% static 'images/Home Furniture Ad Video Template (Editable).mp4' %}" type="video/mp4">
            
@@ -95,8 +95,8 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-lg-2">
-            <h5>Explore</h5>
+          <div class="col-lg-2 f1">
+            <h5><b>Explore</b></h5>
             <p>Dining</p>
           <p>Bedroom</p>
           <p>Office</p>
@@ -104,8 +104,8 @@
           <p>Last Chance</p>
           <p>Blog</p>
           </div>
-          <div class="col-lg-2">
-            <h5>Services</h5>
+          <div class="col-lg-2 f1">
+            <h5><b>Services</b></h5>
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="{% url 'furniture:category'  %}">Shop</a></li>
@@ -113,8 +113,8 @@
               <li><a href="{% url 'furniture:store' %}">Contact</a></li>
             </ul>
           </div>
-          <div class="col-lg-2">
-            <h5>Support</h5>
+          <div class="col-lg-2 f1">
+            <h5><b>Support</b></h5>
             <p>Stay connected on <br>social media:</p>
           </div>
           <div class="col-lg-2">
